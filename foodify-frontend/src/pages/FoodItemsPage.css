@@ -1,0 +1,107 @@
+.food-items-page {
+  padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.food-items-page h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.food-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.food-item {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fffdf6;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.food-info {
+  flex: 1;
+}
+
+.food-info strong {
+  font-size: 18px;
+  color: #444;
+}
+
+.food-info em {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+}
+
+.food-info span {
+  display: block;
+  margin-top: 8px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.button-group {
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-cart {
+  background-color: #ffa600;
+  color: white;
+}
+
+.btn-order {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.admin-actions {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.btn {
+  margin: 4px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-add {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-update {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+}

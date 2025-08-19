@@ -1,0 +1,61 @@
+.header {
+  background-image: url('D:\DAC\Project\foodify-frontend\public\Barbieri_-_ViaSophia25668.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+
+.btn-order, .btn-menu {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-order {
+  background-color: #e74c3c; 
+  color: white;
+}
+
+.btn-order:hover {
+  background-color: #c0392b;
+}
+
+.btn-menu {
+  background-color: #2ecc71; 
+  color: white;
+}
+
+.btn-menu:hover {
+  background-color: #27ae60;
+}

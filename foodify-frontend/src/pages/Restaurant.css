@@ -1,0 +1,51 @@
+/* Container for all restaurant cards */
+.restaurant-container {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Individual restaurant card */
+.restaurant-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.01);
+}
+
+/* Info section */
+.restaurant-info {
+  position: relative;
+}
+
+/* Admin buttons (Edit/Delete) */
+.admin-controls {
+  margin-top: 10px;
+}
+
+.admin-controls button {
+  margin-right: 10px;
+}
+
+/* View Food Items Button */
+.restaurant-card .btn-info {
+  margin-top: 10px;
+}
+
+/* General food items styling */
+.food-items ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.food-items h5 {
+  margin-top: 15px;
+  font-weight: 600;
+}
