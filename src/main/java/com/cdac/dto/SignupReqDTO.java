@@ -12,6 +12,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,6 +22,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
 public class SignupReqDTO{
 	
 	@NotBlank(message = "first name must be supplied")
@@ -35,9 +37,6 @@ public class SignupReqDTO{
 	@NotBlank
 	@Pattern(regexp="((?=.*\\d)(?=.*[a-z])(?=.*[#@$*]).{5,20})",message = "Invalid password format")
 	private String password;	
-	@NotNull
-	@Range(min=1000,max=10000)
-	private double subscriptionAmount;
 	@NotNull(message = "user role must be supplied")
 	private UserRole userRole;
 	@Past(message="Dob must be in past")

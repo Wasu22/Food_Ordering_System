@@ -20,6 +20,7 @@ public class Cart extends BaseEntity {
 	private double subTotal;
 	private double price;//price after discount - if any
 
+	private Long userId; 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "order_id")
 	private Order order;

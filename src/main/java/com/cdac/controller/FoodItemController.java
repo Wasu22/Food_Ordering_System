@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cdac.dto.FoodItemDTO;
+import com.cdac.dto.FoodItemRequestDTO;
 import com.cdac.service.FoodItemService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,21 +24,20 @@ public class FoodItemController {
 	
 	private final FoodItemService foodItemService;
 	
-	@PostMapping("/{restaurantId}")
+	@PostMapping
 	@Operation(description = "Add new food item")
-	public ResponseEntity<?> addFoodItem(@PathVariable 
-			Long restaurantId, @RequestBody FoodItemDTO dto)
+	public ResponseEntity<?> addFoodItem(@RequestBody FoodItemRequestDTO dto)
 	{
-		System.out.println(" in add food "+restaurantId+" "+dto);
+		System.out.println(" in add food "+dto);
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body
 				(foodItemService.addFoodItemToRestaurant
-						(restaurantId, dto));
+						(dto));
 	}
 
 	@PutMapping("/{foodItemId}")
 	@Operation(description = "Update an existing food item")
-	public ResponseEntity<?> updateFoodItem(@PathVariable Long foodItemId, @RequestBody FoodItemDTO dto) {
+	public ResponseEntity<?> updateFoodItem(@PathVariable Long foodItemId, @RequestBody FoodItemRequestDTO dto) {
 	    return ResponseEntity.ok(foodItemService.updateFoodItem(foodItemId, dto));
 	}
 

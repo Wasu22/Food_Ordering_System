@@ -1,4 +1,3 @@
-
 package com.cdac.entities;
 
 import java.time.LocalDateTime;
@@ -50,7 +49,7 @@ public class Order extends BaseEntity {
 	@JoinColumn(nullable = false)
 	private Restaurant restaurant;
 
-	@OneToOne(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinColumn(name="payment_id")
 	private Payment myPayment;
 	

@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.dto.AddRestaurantDTO;
+import com.cdac.dto.ApiResponse;
 import com.cdac.dto.RestaurantRespDTO;
+import com.cdac.dto.ReviewDto;
 import com.cdac.service.RestaurantService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -33,7 +35,7 @@ import lombok.AllArgsConstructor;
 public class RestaurantController {
 	private final RestaurantService restaurantService;
 
-	@GetMapping
+	@GetMapping("/getrestaurant")
 	public  ResponseEntity<?> listAvailableRestaurants() {
 		System.out.println("in list");
 		List<RestaurantRespDTO> restaurants 
@@ -66,7 +68,7 @@ public class RestaurantController {
 				.ok(restaurantService.deleteRestaurantDetail(restaurantId));
 	}
 
-	@GetMapping("/{restaurantId}")
+	@GetMapping("/getrestaurant/{restaurantId}")
 	@Operation(description = "Get restaurant details by ID")
 	public ResponseEntity<?> getRestaurantDetails(
 			@PathVariable @Min(1) @Max(100) Long restaurantId) {
@@ -87,12 +89,25 @@ public class RestaurantController {
 				restaurantService.updateDetails(restaurantId, dto));
 	}	
 	
-	@GetMapping("/{restaurantId}/food_items")
+	@GetMapping("/getrestaurant/{restaurantId}/food_items")
 	public ResponseEntity<?> fetchCompleteDetails(@PathVariable Long restaurantId) {
 		System.out.println("in get completer details "+restaurantId);
 		return ResponseEntity.ok(
 				restaurantService.getCompleteDetails(restaurantId)
 				);
 	}
+	
+	@GetMapping("/getrestaurant/reviews/{id}")
+	public ResponseEntity<List<ReviewDto>> getReviewsForRestaurant(@PathVariable Long id) {
+	    List<ReviewDto> reviews = restaurantService.getReviewsForRestaurant(id);
+	    return ResponseEntity.ok(reviews);
+	}
+
+
+    @PutMapping("/getrestaurant/reviews/{id}")
+    public ResponseEntity<ApiResponse> addReview(@PathVariable Long id, @RequestBody ReviewDto dto) {
+        String message = restaurantService.addRestaurantReview(id, dto);
+        return ResponseEntity.ok(new ApiResponse(message));
+    }
 
 }

@@ -15,5 +15,5 @@ public class RestaurantMenuDTO extends BaseDTO{
 	private AddressDTO address;	
 	private String description;
 	
-	private List<FoodItemDTO> foodItems=new ArrayList<>();
+	private List<FoodItemRequestDTO> foodItems=new ArrayList<>();
 }

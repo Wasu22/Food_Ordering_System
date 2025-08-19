@@ -1,8 +1,6 @@
 package com.cdac.entities;
 import java.time.LocalDate;
 
-//import org.springframework.security.core.userdetails.UserDetails;
-
 //import annotations from JPA
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -57,6 +55,28 @@ public class User extends BaseEntity{
 		this.dob = dob;
 	}
 
+//	 @Override
+//	    public Collection<? extends GrantedAuthority> getAuthorities() {
+//	        return Collections.singleton(new SimpleGrantedAuthority("ROLE_" + this.userRole.name()));
+//	    }
+//
+//	    @Override
+//	    public String getUsername() {
+//	        return this.email;
+//	    }
+
+//	    @Override
+//	    public boolean isAccountNonExpired() { return true; }
+//
+//	    @Override
+//	    public boolean isAccountNonLocked() { return true; }
+//
+//	    @Override
+//	    public boolean isCredentialsNonExpired() { return true; }
+//
+//	    @Override
+//	    public boolean isEnabled() { return true; }
+	
 }
 
 
